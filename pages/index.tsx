@@ -66,6 +66,8 @@ export default function Home() {
 export const getStaticProps=wrapper.getStaticProps(
   (store):any=>async()=>{
   const data=await store.dispatch(getProductsThunk()).unwrap()
+   console.log('Welcome')
+   
   // console.log(data);
   store.dispatch(getProducts(data))
   const data1=await store.dispatch(getCategoriesThunk()).unwrap()
